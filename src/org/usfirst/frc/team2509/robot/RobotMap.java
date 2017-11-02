@@ -1,8 +1,12 @@
 package org.usfirst.frc.team2509.robot;
 
 import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
+import com.ctre.CANTalon.TalonControlMode;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -14,14 +18,37 @@ public class RobotMap {
 	
 	public static final String init = null;
 	public static RobotDrive DriveTrain;
-	public static CANTalon DT_RIGHTFRONT =new CANTalon(1);
-	public static CANTalon DT_LEFTFRONT =new CANTalon(2);
-	public static CANTalon DT_RIGHTREAR =new CANTalon(3);
-	public static CANTalon DT_LEFTREAR = new CANTalon(0);
+	public static CANTalon DT_RIGHTFRONT;
+	public static CANTalon DT_LEFTFRONT;
+	public static CANTalon DT_RIGHTREAR;
+	public static CANTalon DT_LEFTREAR;
+	
+	public static  CANTalon SHOOT_MOTOR;
+	public static Talon SHOOT_KICKER;
+	public static Talon SHOOT_GATE;
+	public static Encoder SHOOT_ENCODER;
 	{	
 }
 	
 	public static void init() {
+		//shooter stuff
+		SHOOT_MOTOR = new CANTalon(6);
+		SHOOT_MOTOR.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
+        SHOOT_MOTOR.reverseSensor(false);
+        SHOOT_MOTOR.configNominalOutputVoltage(+0.0f, -0.0f);
+        SHOOT_MOTOR.configPeakOutputVoltage(+12.0f, -12.0f);
+        SHOOT_MOTOR.setProfile(0); 
+        SHOOT_MOTOR.setF(0);
+        SHOOT_MOTOR.setP(0.04);
+        SHOOT_MOTOR.setI(0.0002);
+        SHOOT_MOTOR.setD(0.0001);
+        SHOOT_MOTOR.changeControlMode(TalonControlMode.Speed);
+		SHOOT_KICKER = new Talon(0);
+		SHOOT_GATE = new Talon(1);
+		
+		
+		
+		//Drivetrain stuff
 		DT_LEFTREAR = new CANTalon(0);
 		DT_RIGHTFRONT = new CANTalon(1);
 		DT_LEFTFRONT = new CANTalon(2);

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2509.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -9,14 +10,33 @@ import edu.wpi.first.wpilibj.Joystick;
 public class OI {
 	public Joystick OPstick;
 	public Joystick COOPstick;
+	public JoystickButton SHOOT;
+    public JoystickButton SHOOT_AIM;
 	
 	public OI() {
 	
 	OPstick = new Joystick(0);
 	COOPstick = new Joystick(1);
+	
+	SHOOT = new JoystickButton(OPstick,1);
+	SHOOT.whileHeld(ShooterRun);
 	}
 	
-	
+	public Joystick getOPStick(){
+		return OPstick;	
+	}
+	public Joystick getOpStick(){
+		return COOPstick;
+	}
+	public double getScaledX(){
+		return (OPstick.getX()*((OPstick.getRawAxis(3)+3)*0.25));
+	}
+	public double getScaledY(){
+		return (OPstick.getY()*((OPstick.getRawAxis(3)+3)*0.25));
+	}
+	public double getScaledZ(){
+		return (OPstick.getZ()*((OPstick.getRawAxis(3)+3)*0.25));
+	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
