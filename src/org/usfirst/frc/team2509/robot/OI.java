@@ -21,8 +21,10 @@ public class OI {
 	COOPstick = new Joystick(1);
 	
 	SHOOT = new JoystickButton(OPstick,1);
-	//working on the command yet, just wanted to get an updated version out
 	SHOOT.whileHeld(new ShooterRun());
+	
+	SWEEP = new JoystickButton(OPstick, 2);
+	
 	}
 	
 	public Joystick getOPStick(){

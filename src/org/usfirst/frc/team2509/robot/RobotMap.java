@@ -27,6 +27,7 @@ public class RobotMap {
 	public static Talon SHOOT_KICKER;
 	public static Talon SHOOT_GATE;
 	public static Encoder SHOOT_ENCODER;
+	public static CANTalon SWEEP_MOTOR;
 	{	
 }
 	
@@ -61,6 +62,9 @@ public class RobotMap {
         DriveTrain.setMaxOutput(1.0);
         DriveTrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
         DriveTrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        
+        //Sweeper stuff
+        SWEEP_MOTOR = new CANTalon(5);
 		
 		
 	
