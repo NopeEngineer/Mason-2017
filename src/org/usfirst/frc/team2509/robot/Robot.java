@@ -2,6 +2,7 @@
 package org.usfirst.frc.team2509.robot;
 
 import org.usfirst.frc.team2509.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team2509.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -21,12 +22,14 @@ public class Robot extends IterativeRobot {
 	
 	public Command
 	autonomousCommand,
-	ExampleCommand;
+	ExampleCommand,
+	ShooterRun;
 	public Joystick
 		OPStick,
 		COOPStick;
 	public static OI oi;
 	public static DriveTrain driveTrain;
+	public static Shooter shooter;
 
 
 
@@ -39,7 +42,7 @@ public class Robot extends IterativeRobot {
 		RobotMap.init();
 		oi = new OI();
 		driveTrain = new DriveTrain();
-		
+		shooter = new Shooter();
 		
 	
 	}

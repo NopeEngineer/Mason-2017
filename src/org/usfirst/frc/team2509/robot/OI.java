@@ -1,5 +1,7 @@
 package org.usfirst.frc.team2509.robot;
 
+import org.usfirst.frc.team2509.robot.commands.ShooterRun;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -19,7 +21,8 @@ public class OI {
 	COOPstick = new Joystick(1);
 	
 	SHOOT = new JoystickButton(OPstick,1);
-	SHOOT.whileHeld(ShooterRun);
+	//working on the command yet, just wanted to get an updated version out
+	SHOOT.whileHeld(new ShooterRun());
 	}
 	
 	public Joystick getOPStick(){

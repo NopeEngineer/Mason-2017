@@ -1,14 +1,25 @@
 package org.usfirst.frc.team2509.robot.commands;
 
+import org.usfirst.frc.team2509.robot.Robot;
+import org.usfirst.frc.team2509.robot.RobotMap;
+
+import com.ctre.CANTalon;
+
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
 public class ShooterRun extends Command {
-
-    public ShooterRun() {
-        // Use requires() here to declare subsystem dependencies
+	//would like to know why i cant have public ShooterRun(){ here at top rather thn the bottom
+    	private double TARGETSPEED = 3800 ;
+    	private final CANTalon MOTOR = Robot.shooter.getShoot();
+    	private final Talon KICKER = Robot.shooter.getKicker();
+    	private final Talon GATE = RobotMap.SHOOT_GATE;
+    	public ShooterRun() {
+ 
+    	// Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
