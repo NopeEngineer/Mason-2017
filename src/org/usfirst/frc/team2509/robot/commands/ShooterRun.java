@@ -6,6 +6,7 @@ import org.usfirst.frc.team2509.robot.RobotMap;
 import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -25,6 +26,13 @@ public class ShooterRun extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	//firing sequence
+    	MOTOR.set(TARGETSPEED); //revving motor to desired speed
+    	Timer.delay(0.5);
+		GATE.set(0.6); //opening gate, allows balls into shooting mechanism
+    	Timer.delay(0.125);
+    	GATE.set(0);//closes gate
+    	KICKER.set(0.5);//fires baLL
     }
 
     // Called repeatedly when this Command is scheduled to run
