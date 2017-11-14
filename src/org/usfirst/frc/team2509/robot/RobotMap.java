@@ -4,6 +4,7 @@ import com.ctre.CANTalon;
 import com.ctre.CANTalon.FeedbackDevice;
 import com.ctre.CANTalon.TalonControlMode;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
@@ -28,6 +29,7 @@ public class RobotMap {
 	public static Talon SHOOT_GATE;
 	public static Encoder SHOOT_ENCODER;
 	public static CANTalon SWEEP_MOTOR;
+	public static ADXRS450_Gyro GYRO_1;
 	{	
 }
 	
@@ -65,6 +67,11 @@ public class RobotMap {
         
         //Sweeper stuff
         SWEEP_MOTOR = new CANTalon(5);
+        
+        //Gyro junk
+        GYRO_1 = new ADXRS450_Gyro();
+       	GYRO_1.reset();
+       	GYRO_1.calibrate();
 		
 		
 	
