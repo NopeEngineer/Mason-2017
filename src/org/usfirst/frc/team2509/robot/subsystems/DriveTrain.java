@@ -42,8 +42,10 @@ public class DriveTrain extends Subsystem {
 	    }
     public ADXRS450_Gyro getGyro(){
 	    	return GYRO;
-	
-    	
+    }
+  	public RobotDrive getDrive() {
+ 	// TODO Auto-generated method stub
+	   	return DRIVETRAIN;	
     	
     	
     	
@@ -54,5 +56,7 @@ public class DriveTrain extends Subsystem {
 		// TODO Auto-generated method stub
 		
 	}
-}
+	
+	}
+
 
