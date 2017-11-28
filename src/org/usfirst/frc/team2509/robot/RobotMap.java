@@ -30,6 +30,8 @@ public class RobotMap {
 	public static Encoder SHOOT_ENCODER;
 	public static CANTalon SWEEP_MOTOR;
 	public static ADXRS450_Gyro GYRO_1;
+	public static CANTalon CLIMB_MOTOR;
+    public static CANTalon CLIMB_ALT;
 	{	
 }
 	
@@ -72,6 +74,12 @@ public class RobotMap {
         GYRO_1 = new ADXRS450_Gyro();
        	GYRO_1.reset();
        	GYRO_1.calibrate();
+       	
+       	//climbing stuff
+       	CLIMB_MOTOR = new CANTalon(4);
+       		CLIMB_MOTOR.setInverted(true);
+       	CLIMB_ALT = new CANTalon(7);
+       		CLIMB_ALT.setInverted(true);
 		
 		
 	

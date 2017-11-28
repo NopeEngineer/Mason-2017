@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2509.robot;
 
 import org.usfirst.frc.team2509.robot.commands.ShooterRun;
+import org.usfirst.frc.team2509.robot.commands.climb;
 import org.usfirst.frc.team2509.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -17,6 +18,7 @@ public class OI {
     public JoystickButton SHOOT_AIM;
     public JoystickButton SWEEP_FORWARD;
 	public JoystickButton SWEEP_BACKWARD;
+	public JoystickButton CLIMB;
     
 	public OI() {
 	
@@ -28,6 +30,9 @@ public class OI {
 	
 	SWEEP_FORWARD = new JoystickButton(OPstick, 3);
 	SWEEP_BACKWARD = new JoystickButton(OPstick, 5);
+	
+	CLIMB = new JoystickButton(COOPstick, 1);
+    CLIMB.whileHeld(new climb());
 	
 	}
 	

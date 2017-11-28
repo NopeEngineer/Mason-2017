@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team2509.robot;
 
+import org.usfirst.frc.team2509.robot.commands.climb;
 import org.usfirst.frc.team2509.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team2509.robot.subsystems.Shooter;
 import org.usfirst.frc.team2509.robot.subsystems.Sweeper;
@@ -45,6 +46,8 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		driveTrain = new DriveTrain();
 		shooter = new Shooter();
+		climber = new climb();
+		
 		
 	
 	}
